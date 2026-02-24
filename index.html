@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axion - Powering What’s New</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="light">
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <h1>AXION</h1>
+    <p id="slogan">Powering What’s New</p>
+  </div>
+
+  <div id="main" class="hidden">
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo">AXION</div>
+      <nav class="nav-links">
+        <a href="#main">Home</a>
+        <a href="#about">About</a>
+        <a href="#productContainer">Products</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#footer">Contact</a>
+      </nav>
+      <div class="controls">
+        <input type="text" id="search" placeholder="Search products...">
+        <button id="themeToggle" class="theme-btn">🌙 DARK MODE</button>
+        <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <h2>About Axion</h2>
+      <p>
+        Axion is a next-generation tech brand built for innovation, speed, and style.
+        We design powerful laptops, immersive audio devices, precision accessories,
+        and smart wearables that enhance productivity and entertainment.
+      </p>
+      <p>
+        Our mission is to combine premium design with cutting-edge engineering,
+        delivering products that push performance boundaries while maintaining
+        reliability and affordability.
+      </p>
+    </section>
+
+    <!-- CATEGORY FILTER -->
+    <section class="categories">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="laptop">Laptop</button>
+      <button class="filter-btn" data-category="headphones">Headphones</button>
+      <button class="filter-btn" data-category="mouse">Mouse</button>
+      <button class="filter-btn" data-category="keyboard">Keyboard</button>
+      <button class="filter-btn" data-category="watch">Watch</button>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="productContainer">
+
+        <!-- PRODUCT MODAL -->
+<div id="productModal" class="hidden">
+  <div class="modal-content">
+    <span id="closeModal" style="cursor:pointer; float:right; font-size:20px;">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalSpecs"></p>
+    <p id="modalPrice" style="font-weight:bold; margin-top:10px;"></p>
+    <button id="modalAddCart" style="margin-top:15px; padding:10px 15px; border:none; background:#00e0ff; border-radius:5px; cursor:pointer; font-weight:bold;">Add to Cart</button>
+  </div>
+</div>
+
+      <!-- LAPTOP -->
+      <div class="card" data-category="laptop">
+        <img src="images/laptops/laptop1.png" alt="Virex AeroFlex 13">
+        <h3>Virex AeroFlex 13</h3>
+        <p>VX-Neuro M4 | 16GB RAM | 512GB SSD | 20hr Battery | Touch Display</p>
+        <span>₱62,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <div class="card" data-category="laptop">
+        <img src="images/laptops/laptop2.png" alt="Virex AeroFlex Pro 15">
+        <h3>Virex AeroFlex Pro 15</h3>
+        <p>VX-Neuro M6 | 32GB RAM | 1TB SSD | 22hr Battery | Aluminum Body</p>
+        <span>₱84,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <!-- HEADPHONES -->
+      <div class="card" data-category="headphones">
+        <img src="images/headphones/h1.png" alt="ZMF V-Rit">
+        <h3>ZMF V-Rit</h3>
+        <p>Open-back | Studio Grade | Detachable Cable | Noise Isolation</p>
+        <span>₱12,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <div class="card" data-category="headphones">
+        <img src="images/headphones/h2.png" alt="Melody Mage">
+        <h3>Melody Mage</h3>
+        <p>Bluetooth 5.3 | 20hr Battery | Bass Boost | Fast Charge</p>
+        <span>₱9,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <!-- MOUSE -->
+      <div class="card" data-category="mouse">
+        <img src="images/mouse/mouse1.png" alt="Virex GlideFold M1">
+        <h3>Virex GlideFold M1</h3>
+        <p>1600 DPI | Silent Click | Foldable | Bluetooth</p>
+        <span>₱2,490</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <!-- KEYBOARD -->
+      <div class="card" data-category="keyboard">
+        <img src="images/keyboards/k1.png" alt="Keyboard P101">
+        <h3>Keyboard P101</h3>
+        <p>Mechanical | RGB | Anti-Ghosting | Aluminum Frame</p>
+        <span>₱5,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+      <!-- WATCH -->
+      <div class="card" data-category="watch">
+        <img src="images/watches/w1.png" alt="Meta Smartwatch">
+        <h3>Meta Smartwatch</h3>
+        <p>Heart Rate | GPS | Sleep Tracking | Water Resistant</p>
+        <span>₱12,990</span>
+        <button class="add">Add to Cart</button>
+      </div>
+
+    </section>
+
+    <!-- CART -->
+    <div id="cartPanel">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p>Total: <span id="total">₱0</span></p>
+      <button id="closeCart">Close</button>
+    </div>
+
+    <!-- FEEDBACK -->
+    <section class="feedback" id="feedback">
+      <h2>Customer Feedback</h2>
+      <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Write your feedback..." required></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <div id="feedbackList"></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <h2>What Our Customers Say</h2>
+
+  <div id="testimonialList">
+    <!-- Preloaded testimonials -->
+    <div class="testimonial">
+      <p>"Super fast delivery and amazing product quality!"</p>
+      <span>– Angela, ⭐⭐⭐⭐⭐</span>
+    </div>
+    <div class="testimonial">
+      <p>"Laptop battery lasts forever. Love it!"</p>
+      <span>– Marco, ⭐⭐⭐⭐</span>
+    </div>
+    <div class="testimonial">
+      <p>"The headphones have perfect sound clarity."</p>
+      <span>– Janice, ⭐⭐⭐⭐⭐</span>
+    </div>
+    <div class="testimonial">
+      <p>"Customer support was really helpful."</p>
+      <span>– Leo, ⭐⭐⭐⭐</span>
+    </div>
+    <div class="testimonial">
+      <p>"Easy to navigate website and checkout."</p>
+      <span>– Mia, ⭐⭐⭐⭐⭐</span>
+    </div>
+  </div>
+
+  <!-- User Submission -->
+  <h3>Submit Your Review</h3>
+  <form id="testimonialForm">
+    <input type="text" id="tName" placeholder="Your Name" required>
+    <textarea id="tMessage" placeholder="Write your review..." required></textarea>
+    <label for="tRating">Rating:</label>
+    <select id="tRating" required>
+      <option value="">Select</option>
+      <option value="1">⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+    </select>
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-content">
+        <p>© 2026 Axion Technologies</p>
+        <p>Email: support@axion.com | Phone: +63 912 345 6789</p>
+        <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- AI ROBOT INQUIRY -->
+  <div id="aiBot">🤖</div>
+<!-- AI CHAT POPUP -->
+<div id="aiChat">
+  <div id="aiHeader">Axion Assistant <span id="closeChatPopup">✖</span></div>
+  <div id="aiMessages"></div>
+  <input type="text" id="aiInput" placeholder="Type your question...">
+  <button id="aiSend">Send</button>
+</div>
+</body>
+</html>
