@@ -392,3 +392,53 @@ footer {
 .landing-page.show {
   opacity: 1;
 }
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-title {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+
+  .about-text {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  .about-highlight {
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .about-tagline {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  #ai-chat {
+    width: 90%;
+    bottom: 80px;
+    right: 5%;
+  }
+
+  #feedback .review, 
+  .leave-feedback {
+    width: 100%;
+  }
+}
