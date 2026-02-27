@@ -5,6 +5,34 @@ h1,h2,p {margin:0;padding:0;}
 button {cursor:pointer;}
 
 /* Pre-Landing */
+/* Landing page hidden initially */
+.landing-page {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.6s ease;
+}
+
+.landing-page.show {
+  opacity: 1;
+  display: block;
+}
+
+/* Pre-landing is full screen */
+.pre-landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  overflow: hidden;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 5000; /* above everything */
+}
 .pre-landing {height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:black; color:white; overflow:hidden;}
 .brand-name {font-size:5rem; color:white; text-shadow:0 0 20px #fff, 0 0 40px #fff, 0 0 60px #0ff, 0 0 80px #0ff, 0 0 100px #0ff; animation: glow 2s infinite alternate;}
 @keyframes glow {0%{text-shadow:0 0 10px #fff;}100%{text-shadow:0 0 20px #0ff, 0 0 30px #0ff,0 0 40px #0ff;}}
@@ -145,12 +173,85 @@ body.dark .about-axion {
 }
 
 /* Testimonials */
-#feedback {padding:3rem 1rem; display:flex; justify-content:space-around; flex-wrap:wrap;}
-.testimonials, .leave-feedback {width:45%; margin-bottom:1rem;}
-.review {border:1px solid #ccc; padding:1rem; margin-bottom:1rem; border-radius:8px; background:white;}
-body.dark .review {background:#1e1e1e; border:none;}
-.review p:first-child {font-weight:bold;}
-.leave-feedback input, .leave-feedback textarea, .leave-feedback select {width:100%; margin-bottom:0.5rem; padding:0.5rem;}
+#feedback {
+  padding: 5rem 3rem;
+  background: #f9f9f9;
+}
+
+.feedback-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.feedback-left {
+  flex: 1.2;
+}
+
+.feedback-left h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 🔥 MAS MALAKI FEEDBACK CARDS */
+.review {
+  padding: 2rem;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-size: 1.2rem;
+}
+
+.review p:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.leave-feedback {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.leave-feedback input,
+.leave-feedback textarea,
+.leave-feedback select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.leave-feedback button {
+  width: 100%;
+  padding: 14px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Dark mode support */
+body.dark #feedback {
+  background: #121212;
+}
+
+body.dark .review,
+body.dark .leave-feedback {
+  background: #1e1e1e;
+  color: white;
+}
 
 /* Footer */
 footer {display:flex; justify-content:space-between; padding:2rem; background:#333; color:white;}
@@ -194,7 +295,7 @@ textarea {
   resize: none;
 }
 
-/* Optional: make it clean and premium parang apple ver na or lenovo/asus */
+/* Basta clean and premium parang apple ver na or lenovo/asus */
 #feedback textarea {
   width: 100%;
   min-height: 120px;
@@ -209,4 +310,85 @@ textarea {
 
 #feedback textarea:focus {
   border-color: black;
+}
+
+.get-in-touch {
+  padding: 6rem 2rem;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  width: 100%;
+}
+
+.get-in-touch h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.get-in-touch p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.newsletter {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.newsletter input {
+  padding: 14px;
+  width: 260px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.newsletter button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.landing-page {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.landing-page.show {
+  opacity: 1;
 }

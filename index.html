@@ -156,20 +156,56 @@
 
 <!-- Testimonials (Mikey n dogs here bwehe)-->
 <section id="feedback">
-  <h2>What Our Customers Say</h2>
-  <div class="testimonials" id="testimonials-container"></div>
-  <div class="leave-feedback">
-    <input type="text" placeholder="Your Name" id="user-name">
-    <textarea placeholder="Your Feedback" id="user-feedback"></textarea>
-    <label>Rating:</label>
-    <select id="user-rating">
-      <option value="1">⭐</option>
-      <option value="2">⭐⭐</option>
-      <option value="3">⭐⭐⭐</option>
-      <option value="4">⭐⭐⭐⭐</option>
-      <option value="5" selected>⭐⭐⭐⭐⭐</option>
-    </select>
-    <button onclick="submitFeedback()">Submit</button>
+  <div class="feedback-wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="feedback-left">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials" id="testimonials-container"></div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="leave-feedback">
+      <h3>Leave Your Feedback</h3>
+
+      <input type="text" placeholder="Your Name" id="user-name">
+      <textarea placeholder="Your Feedback" id="user-feedback"></textarea>
+
+      <label>Rating:</label>
+      <select id="user-rating">
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5" selected>⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <button onclick="submitFeedback()">Submit</button>
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+<section class="get-in-touch">
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+
+    <p>
+      Use our contact form for all information requests or contact us directly using the contact information below.
+    </p>
+
+    <p>
+      Feel free to get in touch via email or phone.
+    </p>
+
+    <h3>Get the latest deals and more:</h3>
+
+    <div class="newsletter">
+      <input type="email" placeholder="Enter email address">
+      <button>Sign Up</button>
+    </div>
   </div>
 </section>
 
@@ -180,13 +216,17 @@
     <p>supportaxion@yahoo.com</p>
     <p>+63 912 345 6789</p>
   </div>
-  <div class="footer-center">
-    <p>Privacy Policy | Terms of Use | Legal | Site Map</p>
-    <p>Philippines</p>
+ <div class="footer-center">
+  <p>Privacy Policy | Terms of Use | Legal | Site Map</p>
+  <p>Copyright © 2026 Axion. All rights reserved.</p>
+  <p>Philippines</p>
+</div>
   </div>
   <div class="footer-right">
     <p>Follow us on:</p>
-    <p>Facebook | Instagram | Twitter</p>
+    <p>Facebook 
+    <p>Instagram  
+    </p>Twitter</p>
   </div>
 </footer>
 
@@ -204,3 +244,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+

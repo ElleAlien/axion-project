@@ -1,8 +1,10 @@
-// ---------------- Pre-Landing Animation (bef)----------------
+// ---------------- Pre-Landing Animation ----------------
 window.onload = () => {
   setTimeout(() => {
     document.querySelector('.pre-landing').style.display='none';
-    document.querySelector('.landing-page').style.display='block';
+    const landing = document.querySelector(".landing-page");
+    landing.style.display = "block";  // make it visible
+    setTimeout(()=> landing.classList.add("show"), 50); // fade-in
   }, 4000);
 };
 
